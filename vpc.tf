@@ -1,8 +1,9 @@
 module "vpc" {
   source = "terraform-aws-modules/vpc/aws"
-  cidr_block       = "10.0.0.0/16"
-  instance_tenancy = "dedicated"
+  name = "my-vpc"
+  cidr = "10.0.0.0/16"
   tags = {
-    Name = "main"
+    Terraform = "true"
+    Environment = "dev"
   }
 }
